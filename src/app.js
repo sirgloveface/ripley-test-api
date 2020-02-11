@@ -3,8 +3,9 @@ import { health, weather } from "./routes"
 import redis from "redis"
 import latitudeData from "./constants"
 // create and connect redis client to local instance.
-const client = redis.createClient(process.env.REDIS_PORT || 6379)
- 
+//const client = redis.createClient(process.env.REDIS_PORT || 6379)
+const client = redis.createClient("redis://rediscloud:ePxMw6GwgD2aPvlWkSEXpV1RqyhqYIRr@redis-19597.c52.us-east-1-4.ec2.cloud.redislabs.com:19597" || 6379)
+
 // echo redis errors to the console
 client.on('error', (err) => {
     console.log("Error " + err)
