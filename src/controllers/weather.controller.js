@@ -9,7 +9,7 @@ class Weather {
   constructor() {
     this._logger = chalk;
     this._socket = null
-    this._client = redis.createClient(6379)
+    this._client = redis.createClient(process.env.REDISCLOUD_URL || 6379)
     console.log(`${this._logger.green('[ Weather controller ] ')} constructor`)
   }
   
